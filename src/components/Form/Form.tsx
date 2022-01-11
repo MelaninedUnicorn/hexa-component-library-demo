@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
+
 const FormComponent: React.FC<any> = () => {
     const [colorCode, setcolorCode] = useState("#4666d0");
-    const submitForm = (event: any) => {
+    const submitForm = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 
         // verify that the value is a hex value
         // call the fct from my npm package
@@ -26,10 +26,10 @@ const FormComponent: React.FC<any> = () => {
                 noValidate
                 autoComplete="off"
             >
-                <Typography>Color Code Visualizer</Typography>
-                <TextField id="color-code-input" label="Color Code" variant="outlined" value={colorCode} onChange={handleChange} />
-                <Button id="submitBtn" variant="contained"> Generate Color</Button>
-                <Button type="submit" id="submitBtn" color="success" variant="contained" onClick={submitForm} > Submit</Button>
+
+                <TextField data-testid="color-code-input" id="color-code-input" label="Color Code" variant="outlined" value={colorCode} onChange={handleChange} />
+                <Button data-testid="generate-color-btn" id="generate-color-btn" variant="contained"> Generate Color</Button>
+                <Button data-testid="submit-btn"type="submit" id="submit-btn" color="success" variant="contained" onClick={submitForm} > Submit</Button>
 
             </Box>
         </div>
