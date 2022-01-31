@@ -4,6 +4,8 @@ import FormComponent from './Form';
 
 
 
+
+
 test('renders the form component and its expected elements', () => {
     render(<FormComponent />);
 
@@ -11,7 +13,7 @@ test('renders the form component and its expected elements', () => {
     const textField = screen.getByTestId("color-code-input");
     const generateColorBtn = screen.getByTestId("generate-color-btn");
     const submitBtn = screen.getByTestId("submit-btn");
-    
+
     expect(boxComponent).toBeInTheDocument();
     expect(textField).toBeInTheDocument();
     expect(generateColorBtn).toBeInTheDocument();
